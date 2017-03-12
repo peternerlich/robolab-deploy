@@ -26,6 +26,29 @@ def build_call(password):
     \\033[31m################################################################################\\033[0m\'\" ENTER"
 
     systemd_error_print =  '"print(beautiful_statement_and_noone_will_use_this_var)" ENTER'
+    
+    ig0r_msg = "\"beautiful_statement_and_noone_will_use_this_var_either = \'\
+    \\033[31m____  ______   \\033[37m_______\\033[31m ________ \\n\
+    )  ( /  ____\ \\033[37m/  ___  \\\\\\\\\\033[31m)   __  \ \\n\
+    |  |/  /  ___\\033[37m|  /   \  |\\033[31m  |__)  ) \\n\
+    |  |  |  )_  \\033[37m| | \\033[35m[\\033[31m0\\033[35m]\\033[37m | |\\033[31m   _   /    \\033[35m[\\033[31m0\\033[35m]\\033[35m \\n\
+    |  |\  \__/  \\033[37m|  \___/  |\\033[31m  | \  \ \\n\
+    )__( \_____/_|\\033[37m\_______/\\033[31m|__|  \__\ \\n\
+    \\n\
+    \\033[0m   \`       [    \\033[31mOBEY.\\033[0m   ]       \` \'\" ENTER"
+
+    ig0r_msg_col = "\"beautiful_statement_and_noone_will_use_this_var_either = \'\
+    \\033[31m____  ______   \\033[30m_______ \\033[31m________ \\n\
+    \\033[40;31m)  (\\033[00;31m \\033[40;31m/  ____\\\\\\\\\\033[00;37m \\033[41;30m/  ___  \\\\\\\\\\033[40;31m)   __  \\\\\\\\\\033[00;31m \\n\
+    \\033[40;31m|  |/  /\\033[00;31m  ___\\033[41;30m|  /\\033[00;30m   \\033[41;30m\  |\\033[40;31m  |\\033[00;31m__\\033[40;31m)  )\\033[00;31m \\n\
+    \\033[40;31m|  |  |\\033[00;31m  \\033[40;31m)_  \\033[41;30m| |\\033[00;30m \\033[47;35m[\\033[47;31m0\\033[47;35m]\\033[00;30m \\033[41;30m| |\\033[40;31m   _   /\\033[00;35m    \\033[47;35m[\\033[31m0\\033[35m]\\033[00;35m \\n\
+    \\033[40;31m|  |\  \\\\\\\\\\033[00;31m__\\033[40;31m/  \\033[41;30m|  \\\\\\\\\\033[00;30m___\\033[41;30m/  |\\033[40;31m  |\\033[00;31m \\033[40;31m\  \\\\\\\\\\033[00;31m \\n\
+    \\033[40;31m)__(\\033[00;31m \\033[40;31m\_____/_|\\033[41;30m\_______/\\033[40;31m|__|\\033[00;31m  \\033[40;31m\__\\\\\\\\\\033[00;0m \\n\
+    \\n\
+    \\033[1;0m   \`       [   \\033[40;31m OBEY.\\033[00;0m   ]       \` \'\" ENTER"
+
+    ig0r_msg_print =  '"print(beautiful_statement_and_noone_will_use_this_var_either)" ENTER'
+
 
     # command = "; ".join((backup_command, tmux_command))
     #systemd_command ='if ! (tmux -S /tmp/tmux/shared has-session -t \
@@ -43,6 +66,6 @@ def build_call(password):
 
     command = "; ".join((systemd_command_if, tmux_send + ' ' +
                          systemd_error + ' ' + tmux_cls, tmux_send + ' ' + systemd_error_print + ' ' + tmux_run, 'sleep 15s',
-                         'else ' + tmux_send + ' ' + tmux_blacklist + ' '+ tmux_reload + ' ' + tmux_cls + ' ' + tmux_run, 'fi',
+                         'else ' + tmux_send + ' ' + tmux_blacklist + ' '+ tmux_reload + ' ' + ig0r_msg + ' ' + tmux_cls + ' ' + ig0r_msg_print + ' ' + tmux_run, 'fi',
                         tmux_attach))
     return command
