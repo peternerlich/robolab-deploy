@@ -185,7 +185,11 @@ def main(copy=True, backup=False):
         settings = json.load(file)
 
     # get the platform specific routines
-    print('Remembered OS is', settings['os'])
+    if settings['os'] == 'Windows':
+        print('BOOO! Windumb!!')
+    else:
+        print('Remembered OS is', settings['os'])
+    
     system = Windows(settings) if settings['os'] == 'Windows' else Unix(settings)
 
     if backup:
